@@ -19,8 +19,24 @@ print(my_dna)
 print(my_transcript)
 print(my_transcript.alphabet)
 
-print(my_dna.translate(to_stop=True)) #basically stops translating after finding a codon
+# print(my_dna.translate(to_stop=True)) #basically stops translating after finding a codon
 
 ############################
 gene = Seq("ATGGCCATTGTAATGTAG", generic_dna)
-print(gene.translate(cds=True)) ###only translates first start codon till stop codon
+# print(gene.translate(cds=True)) ###only translates first start codon till stop codon
+
+############################
+f = open("AAD01939.txt", "r")
+
+if f.mode == 'r':
+    proteinSequence1 = Seq(f.read(), generic_protein)
+
+print(proteinSequence1.alphabet)
+
+"""""""""
+SEQUENCE ALIGNENT
+"""""""""
+
+seq1 = Seq("tacggtat", generic_dna)
+seq2 = Seq("ggacgtacg", generic_dna)
+
